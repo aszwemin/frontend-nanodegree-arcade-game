@@ -474,35 +474,35 @@ var GameOver = function() {
     this.height = 300;
     this.x = 200;
     this.y = 110;
-    // Prepare things to show on the overlay
-    this.gameover = ['Game over!', 210, 170];
-    this.score_a = [
-        'Your score: blue: 10 x ' + scoreBoard.gems[0] + ',',
-        210, 210
-    ];
-    this.score_b = [ 
-        'green: 15 x ' + scoreBoard.gems[1] + ',',
-        210, 240
-    ];
-    this.score_c = [
-        'orange: 20 x ' + scoreBoard.gems[2],
-        210, 270
-    ];
-    this.score_d = [
-        'and level: 50 x ' + level,
-        210, 300
-    ];
-    this.score_e = [
-        '= ' + (scoreBoard.gems[0] * 10 + scoreBoard.gems[1] * 15 + 
-        scoreBoard.gems[2] * 20 + level * 50), 
-        210, 330
-    ];
-    this.restart = ['Press r to restart', 210, 360];
 }
 
 /* Only render when game in gameover state */
 GameOver.prototype.render = function() {
     if (state == 'gameover') {
+		// Prepare things to show on the overlay
+		this.gameover = ['Game over!', 210, 170];
+		this.score_a = [
+			'Your score: blue: 10 x ' + scoreBoard.gems[0] + ',',
+			210, 210
+		];
+		this.score_b = [ 
+			'green: 15 x ' + scoreBoard.gems[1] + ',',
+			210, 240
+		];
+		this.score_c = [
+			'orange: 20 x ' + scoreBoard.gems[2],
+			210, 270
+		];
+		this.score_d = [
+			'and level: 50 x ' + level,
+			210, 300
+		];
+		this.score_e = [
+			'= ' + (scoreBoard.gems[0] * 10 + scoreBoard.gems[1] * 15 + 
+			scoreBoard.gems[2] * 20 + level * 50), 
+			210, 330
+		];
+		this.restart = ['Press r to restart', 210, 360];
         ctx.strokeStyle = 'red';
         ctx.lineWidth = '8';
         ctx.rect(this.x, this.y, this.width, this.height);
